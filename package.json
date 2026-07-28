@@ -1,0 +1,64 @@
+{
+  "name": "atomic-quadtree-cut",
+  "version": "0.1.0",
+  "description": "Reconcile ready quadtree content without overlapping ancestors and descendants or exposing partial refinements.",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js"
+    }
+  },
+  "types": "./src/index.d.ts",
+  "files": [
+    "src",
+    "docs",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "CONTRIBUTING.md",
+    "CODE_OF_CONDUCT.md",
+    "SECURITY.md"
+  ],
+  "scripts": {
+    "lint": "node --check src/*.js test/*.js scripts/*.mjs examples/*.mjs benchmark/*.mjs",
+    "typecheck": "tsc --project tsconfig.json",
+    "test": "node --test",
+    "test:coverage": "node --experimental-test-coverage --test --test-coverage-lines=100 --test-coverage-branches=95 --test-coverage-functions=100",
+    "benchmark": "node benchmark/cut.mjs",
+    "benchmark:smoke": "node benchmark/cut.mjs --smoke",
+    "example": "node examples/basic.mjs",
+    "package:lint": "publint",
+    "package:types": "attw --pack . --profile esm-only",
+    "package:smoke": "node scripts/verify-package.mjs",
+    "check:compat": "npm run lint && npm run typecheck && npm test && npm run benchmark:smoke && npm run example && npm run package:lint && npm run package:types && npm run package:smoke",
+    "check": "npm run lint && npm run typecheck && npm run test:coverage && npm run benchmark:smoke && npm run example && npm run package:lint && npm run package:types && npm run package:smoke",
+    "prepublishOnly": "npm run check"
+  },
+  "keywords": [
+    "quadtree",
+    "tiles",
+    "lod",
+    "streaming",
+    "refinement"
+  ],
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "author": "seoulpro <lim@limsumin.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seoulpro/atomic-quadtree-cut.git"
+  },
+  "bugs": {
+    "url": "https://github.com/seoulpro/atomic-quadtree-cut/issues"
+  },
+  "homepage": "https://github.com/seoulpro/atomic-quadtree-cut#readme",
+  "devDependencies": {
+    "@arethetypeswrong/cli": "0.18.5",
+    "publint": "0.3.22",
+    "typescript": "7.0.2"
+  }
+}
