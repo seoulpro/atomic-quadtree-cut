@@ -25,7 +25,7 @@
     "lint": "node --check src/*.js test/*.js scripts/*.mjs examples/*.mjs benchmark/*.mjs",
     "typecheck": "tsc --project tsconfig.json",
     "test": "node --test",
-    "test:coverage": "node --experimental-test-coverage --test --test-coverage-lines=100 --test-coverage-branches=95 --test-coverage-functions=100",
+    "test:coverage": "node --experimental-test-coverage --test --test-coverage-include=src/**/*.js --test-coverage-lines=100 --test-coverage-branches=95 --test-coverage-functions=100",
     "benchmark": "node benchmark/cut.mjs",
     "benchmark:smoke": "node benchmark/cut.mjs --smoke",
     "example": "node examples/basic.mjs",
