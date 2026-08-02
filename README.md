@@ -131,6 +131,15 @@ See [Service adapter](docs/service-adapter.md) for a projection adapter and
 [related-concepts review](docs/prior-art.md) records conceptual prior art and
 the clean licensing boundary.
 
+## Related projects
+
+- [tileset-scope-versioner](https://github.com/seoulpro/tileset-scope-versioner) — scope-
+  local cache versions for the nested tile trees being refined.
+- [render-handoff-contract](https://github.com/seoulpro/render-handoff-contract) — audits
+  for keeping a view coherent while streamed content is replaced.
+- [trajectory-rollup](https://github.com/seoulpro/trajectory-rollup) — boundary-aware
+  aggregation over spatial cells.
+
 ## License
 
 ISC
