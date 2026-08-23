@@ -131,6 +131,13 @@ See [Service adapter](docs/service-adapter.md) for a projection adapter and
 [related-concepts review](docs/prior-art.md) records conceptual prior art and
 the clean licensing boundary.
 
+## Performance
+
+The benchmark exercises independent committed branches refining into four
+ready children with one witness per child. It reports median, p95, and
+per-branch time across a scaling matrix. See [Performance](docs/performance.md)
+for the measurement contract and reproduction commands.
+
 ## Related projects
 
 - [tileset-scope-versioner](https://github.com/seoulpro/tileset-scope-versioner) — scope-
