@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## Unreleased
+
+- Avoid scanning the retained cut for descendants when a ready candidate is
+  already known to refine a retained ancestor.
+
 ## 0.1.0
 
 - Add witness-gated reconciliation of committed and ready quadtree cuts.
