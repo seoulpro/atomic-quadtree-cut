@@ -446,18 +446,6 @@ export function resolveAtomicQuadtreeCut(options) {
       continue;
     }
 
-    const descendants = effective.findDescendants(candidate.address);
-    if (descendants.length > 0) {
-      for (const descendant of descendants) effective.remove(descendant);
-      effective.add(candidate);
-      transitions.push({
-        type: "coarsen",
-        added: toDiagnosticItem(candidate),
-        removed: descendants.map(toDiagnosticItem),
-      });
-      continue;
-    }
-
     const ancestor = effective.findAncestor(candidate.address, true);
     if (ancestor) {
       const key = addressKey(ancestor.address);
@@ -467,6 +455,18 @@ export function resolveAtomicQuadtreeCut(options) {
       };
       pending.candidates.push(candidate);
       pendingRefinements.set(key, pending);
+      continue;
+    }
+
+    const descendants = effective.findDescendants(candidate.address);
+    if (descendants.length > 0) {
+      for (const descendant of descendants) effective.remove(descendant);
+      effective.add(candidate);
+      transitions.push({
+        type: "coarsen",
+        added: toDiagnosticItem(candidate),
+        removed: descendants.map(toDiagnosticItem),
+      });
       continue;
     }
 
