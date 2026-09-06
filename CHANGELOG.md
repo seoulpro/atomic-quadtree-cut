@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+## 0.1.1 - 2026-09-06
+
 - Avoid scanning the retained cut for descendants when a ready candidate is
   already known to refine a retained ancestor.
 - Report scaling distributions and per-branch cost from the reproducible
