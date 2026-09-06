@@ -1,6 +1,6 @@
 {
   "name": "atomic-quadtree-cut",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Reconcile ready quadtree content without overlapping ancestors and descendants or exposing partial refinements.",
   "type": "module",
   "sideEffects": false,
